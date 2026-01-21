@@ -44,8 +44,6 @@ Plataforma web moderna para bienes raíces desarrollada con un enfoque en alto r
    BUN_PUBLIC_FIREBASE_MEASUREMENT_ID=...
    ```
 
-   > **Nota:** Para el panel de administración, asegúrate de tener el archivo `service-account.json` en la raíz (este archivo está ignorado por git por seguridad).
-
 ## ▶️ Ejecución
 
 Para iniciar el servidor de desarrollo (Backend + Frontend Builder):
@@ -71,5 +69,3 @@ El proyecto utiliza un sistema de doble verificación:
 2. **Backend Check:** El servidor verifica contra una base de datos SQLite si el email tiene permisos de acceso antes de permitir la entrada al panel de administración.
 
 ---
-
-Desarrollado con ❤️ usando Bun.
