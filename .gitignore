@@ -1,0 +1,54 @@
+# dependencies (bun install)
+node_modules
+# Ignorar lockfile binario de Bun (ya que tienes bun.lock en texto)
+bun.lockb
+
+# output
+out
+dist
+*.tgz
+
+# code coverage
+coverage
+*.lcov
+
+# logs
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+
+# IntelliJ based IDEs
+.idea
+
+# Finder (MacOS) folder config
+.DS_Store
+
+# service account keys firebase
+service-account.json
+
+# Database (SQLite)
+*.sqlite
+*.sqlite-journal
+*.db
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+
+# Editor directories
+.vscode/
+
+# Personal/Temporary files
+ZZ__NOTAS.txt

@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* ==============================================
+       1. DEFINICIÓN DE LA PALETA (RAW COLORS)
+       Aquí están todos los códigos exactos de tu imagen
+       ============================================== */
+
+    /* Principales */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-blue-main: #003b63;
+
+    /* Secundarios Obscuros */
+    --color-navy-dark: #001e32;
+    --color-navy: #002c4a;
+    --color-gray-dark: #2d2b27;
+    --color-gray-medium: #5b574f;
+    --color-gray-taupe: #797369;
+
+    /* Secundarios Claros (Azules) */
+    --color-blue-1: #336282;
+    --color-blue-2: #6689a1;
+    --color-blue-3: #99b1c1;
+    --color-blue-4: #ccd8e0;
+
+    /* Secundarios Claros (Beiges/Grises) */
+    --color-beige-dark: #b5ad9d;
+    --color-beige-medium: #c4bdb1;
+    --color-beige-light: #d3cec4;
+    --color-beige-pale: #e1ded8;
+    --color-off-white: #f0efeb;
+
+    /* Acentos (Rojos) */
+    --color-red-main: #e9514b;
+    --color-red-light: #ed746f;
+    --color-red-pale: #fbdcdb;
+
+    /* Acentos (Amarillos) */
+    --color-yellow-main: #ffac27;
+    --color-yellow-light: #ffbd5a;
+    --color-yellow-pale: #ffeed5;
+
+    /* ==============================================
+       2. TEMA CLARO (LIGHT MODE) - Por defecto
+       Asignamos roles a los colores
+       ============================================== */
+    --bg-primary: var(--color-white);
+    --bg-secondary: var(
+      --color-off-white
+    ); /* Para tarjetas o secciones alternas */
+    --bg-accent: var(--color-red-main); /* Botones o llamadas a la acción */
+
+    --text-primary: var(--color-black);
+    --text-secondary: var(--color-gray-medium);
+    --text-accent: var(--color-blue-main);
+
+    --border-color: var(--color-beige-pale);
+    --input-bg: var(--color-white);
+    --mobile-separator: var(--color-black);
+    --social-icon-color: var(--color-navy-dark);
+  }
+
+  /* ==============================================
+     3. TEMA OSCURO (DARK MODE)
+     Reasignamos los roles para que se vea bien de noche
+     ============================================== */
+  .dark {
+    /* En modo oscuro, usamos el Navy Dark en lugar de negro puro para un look más "premium" */
+    --bg-primary: var(--color-navy-dark);
+    --bg-secondary: var(--color-navy);
+    --bg-accent: var(
+      --color-red-light
+    ); /* Un rojo un poco más suave para no lastimar la vista */
+
+    --text-primary: var(--color-white);
+    --text-secondary: var(
+      --color-blue-4
+    ); /* Gris/Azul claro para texto secundario */
+    --text-accent: var(
+      --color-yellow-main
+    ); /* El amarillo resalta mejor sobre azul oscuro */
+
+    --border-color: var(--color-blue-1);
+    --input-bg: var(--color-navy);
+    --mobile-separator: color-mix(
+      in srgb,
+      var(--color-off-white),
+      transparent 80%
+    );
+    --social-icon-color: var(--color-white);
+  }
+
+  html {
+    @apply antialiased scroll-smooth;
+  }
+
+  body {
+    /* Usamos las variables semánticas (bg-primary, text-primary) */
+    @apply bg-(--bg-primary) text-(--text-primary) min-h-screen min-w-[320px] m-0 transition-colors duration-300;
+  }
+
+  /* Clases de utilidad personalizadas para tu marca */
+  .btn-primary {
+    @apply bg-(--bg-accent) text-white px-4 py-2 rounded hover:opacity-90 transition-opacity;
+  }
+
+  .card {
+    @apply bg-(--bg-secondary) border border-(--border-color) rounded-lg p-4;
+  }
+
+  #root {
+    @apply min-h-screen flex flex-col;
+  }
+
+  /* Animaciones personalizadas */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-marquee {
+    display: flex;
+    width: fit-content;
+    animation: marquee 35s linear infinite;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+  @keyframes slow-zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  .animate-slow-zoom {
+    animation: slow-zoom 20s ease-in-out infinite alternate;
+  }
+}
