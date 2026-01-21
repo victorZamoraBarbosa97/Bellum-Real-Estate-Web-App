@@ -71,5 +71,3 @@ El proyecto utiliza un sistema de doble verificación:
 2. **Backend Check:** El servidor verifica contra una base de datos SQLite si el email tiene permisos de acceso antes de permitir la entrada al panel de administración.
 
 ---
-
-Desarrollado con ❤️ usando Bun.
